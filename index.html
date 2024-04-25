@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     <nav class="nav">
@@ -34,6 +35,10 @@
         </div>
     </div>
     <script>
+        $.getJSON('https://api.ipify.org?format=json', function(data) {
+          console.log('Your IP address is ' + data.ip);
+        });
+
         {
             const nav =document.querySelector(".nav");
             let lastScrollY=window.scrollY;
