@@ -35,10 +35,40 @@
         </div>
     </div>
     <script>
-          function getIP(json) {
-        console.log("My public IP address is: ", json.ip);
-          }
+        const fs = require('fs');
 
+    
+        function registerName(filename, name) {
+            fs.appendFileSync(filename, name + '\n');
+        }
+        
+        
+        function countLines(filename) {
+            const fileContent = fs.readFileSync(filename, 'utf8');
+            const lines = fileContent.split('\n');
+            return lines.length;
+        }
+        
+        const filename = 'ipadd.txt';
+        
+        
+            function checkIfIPExists(filename, ipAddress) {
+            const fileContent = fs.readFileSync(filename, 'utf8');
+            const lines = fileContent.split('\n');
+            for (const line of lines) {
+                if (line.trim() === ipAddress) {
+                    return true;
+                }
+            }
+            return false;
+            }
+            if(checkIfIPExists(filename,json.ip)){
+                console.log("exist");
+            }
+            else{
+            registerName(filename,json.ip);
+            console.log( countLines(filename));
+            }
         {
             const nav =document.querySelector(".nav");
             let lastScrollY=window.scrollY;
