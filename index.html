@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+   
 </head>
 <body>
     <nav class="nav">
@@ -38,10 +38,7 @@
   function getIP(json) {
     return(json.ip);
   }
-</script>
-<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
-    <script>  
-           function registerName(name) {
+    function registerName(name) {
     const storedIPs = localStorage.getItem('ipadd');
     const ips = storedIPs ? storedIPs.split(',') : [];
     if (!ips.includes(name)) {
@@ -65,6 +62,10 @@ if (checkIfIPExists(ipAddress)) {
     const numLines = registerName(ipAddress);
     console.log(numLines);
 }
+</script>
+<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+    <script>  
+           
         {
             const nav =document.querySelector(".nav");
             let lastScrollY=window.scrollY;
