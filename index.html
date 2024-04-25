@@ -50,7 +50,10 @@
         const ips = storedIPs ? storedIPs.split(',') : [];
         return ips.includes(ipAddress);
     }
-    
+   
+  function getIP(json) {
+    console.log("My public IP address is: ", json.ip);
+  }
     
     
     if (checkIfIPExists(json.ip)) {
