@@ -35,34 +35,34 @@
         </div>
     </div>
     <script type="application/javascript">
-  function getIP(json) {
-    console.log(json.ip);
-  }
-    function registerName(name) {
-    const storedIPs = localStorage.getItem('ipadd');
-    const ips = storedIPs ? storedIPs.split(',') : [];
-    if (!ips.includes(name)) {
-        ips.push(name);
-        localStorage.setItem('ipadd', ips.join(','));
-    }
-    return ips.length;
-}
+        function registerName(name) {
+            const storedIPs = localStorage.getItem('ipadd');
+            const ips = storedIPs ? storedIPs.split(',') : [];
+            if (!ips.includes(name)) {
+                ips.push(name);
+                localStorage.setItem('ipadd', ips.join(','));
+            }
+            return ips.length;
+        }
 
-function checkIfIPExists(ipAddress) {
-    const storedIPs = localStorage.getItem('ipadd');
-    const ips = storedIPs ? storedIPs.split(',') : [];
-    return ips.includes(ipAddress);
-}
+        function checkIfIPExists(ipAddress) {
+            const storedIPs = localStorage.getItem('ipadd');
+            const ips = storedIPs ? storedIPs.split(',') : [];
+            return ips.includes(ipAddress);
+        }
 
-const ipAddress = getIP(json);
-console.log(ipAddress);
-if (checkIfIPExists(ipAddress)) {
-    console.log("exist");
-} else {
-    const numLines = registerName(ipAddress);
-    console.log(numLines);
-}
-</script>
+        function getIP(json) {
+            const ipAddress = json.ip;
+            console.log(ipAddress);
+            if (checkIfIPExists(ipAddress)) {
+                console.log("exist");
+            } else {
+                const numLines = registerName(ipAddress);
+                console.log(numLines);
+            }
+        }
+    </script>
+    <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
 <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
     <script>  
            
