@@ -253,12 +253,18 @@
     color: white; /* Make text white */
     text-decoration: none; /* Remove underline */
     font-size: 16px; /* Adjust font size */
+    transition: all 0.3s ease; /* Smooth transition for the glow effect */
 }
 
 .download-link img {
     width: 20px; /* Resize SVG */
     height: 20px;
     margin-right: 8px; /* Add spacing between icon and text */
+}
+.download-link:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect around text */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect around the link */
+    transform: scale(1.05); /* Slightly enlarge the link on hover */
 }
 @media screen and (max-width:1150px) {
     .container p[id="one"]{
