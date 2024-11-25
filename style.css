@@ -259,7 +259,6 @@
     width: 20px; /* Resize SVG */
     height: 20px;
     margin-right: 8px; /* Add spacing between icon and text */
-    filter: invert(1); /* Make SVG white */
 }
 @media screen and (max-width:1150px) {
     .container p[id="one"]{
