@@ -254,6 +254,7 @@
     text-decoration: none; /* Remove underline */
     font-size: 16px; /* Adjust font size */
     transition: all 0.3s ease; /* Smooth transition for the glow effect */
+    font-weight: 700;
 }
 
 .download-link img {
